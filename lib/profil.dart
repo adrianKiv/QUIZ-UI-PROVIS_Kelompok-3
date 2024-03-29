@@ -40,7 +40,6 @@ class _ProfilePageState extends State<ProfilePage> {
         width: MediaQuery.of(context).size.width,
         child: Stack(
           children: [
-            // Top container with solid color
             Container(
               height: 90,
               width: MediaQuery.of(context).size.width,
@@ -51,9 +50,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 ),
                 color: Color(0xFF003366)),
             ),
-            // Bottom container with rounded corners and white background
             Positioned(
-              // Adjust positioning for better alignment if needed
               top: 0,
               left: 0,
               right: 0,
@@ -74,50 +71,53 @@ class _ProfilePageState extends State<ProfilePage> {
                   //   ),
                   // ],
                 ),
-                child: SingleChildScrollView( // Allow scrolling if content overflows
+                child: SingleChildScrollView(
                   child: Column(
                     children: [
                       // Row for photo and name
                       Row(
                         children: [
-                          const SizedBox(width: 30.0),
+                          const SizedBox(width: 40.0),
                           GestureDetector(
                             onTap: () {
-                              // TODO: Implement photo upload functionality
                             },
                             child: Container(
-                              height: 100,
-                              width: 100, // Adjust width as needed
+                              height: 110,
+                              width: 110,
                               decoration: BoxDecoration(
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(10.0),
-                                border: Border.all(color: const Color(0xFF003366), width: 2.0), // Add blue border
+                                border: Border.all(color: const Color(0xFF003366), width: 2.0),
                               ),
                               child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   const Text(
                                     'Masukkan Foto Profil',
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
                                       fontSize: 13.0,
-                                      fontWeight: FontWeight.normal,
+                                      fontWeight: FontWeight.bold,
                                       color: Color(0xFF003366),
                                     ),
                                   ),
                                   Expanded(
                                     child: Container(),
                                   ),
-                                  SizedBox( 
-                                    width: double.infinity, // Make container take full available width
-                                    child:ElevatedButton(
+                                  SizedBox(
+                                    width: double.infinity,
+                                    child: ElevatedButton(
                                       onPressed: () {
                                       },
                                       child: Text('Ubah', style: TextStyle(color: Colors.white)),
                                       style: ButtonStyle(
                                         backgroundColor: MaterialStateProperty.all<Color>(const Color(0xFF003366)),
                                         shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                                          RoundedRectangleBorder(
-                                            borderRadius: BorderRadius.circular(5),
+                                          const RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.only(
+                                                bottomLeft: Radius.circular(4),
+                                                bottomRight: Radius.circular(4)
+                                            ),
                                           ),
                                         ),
                                       ),
@@ -127,7 +127,7 @@ class _ProfilePageState extends State<ProfilePage> {
                               ),
                             ),
                           ),
-                          const SizedBox(width: 20.0), // Add spacing between photo and name
+                          const SizedBox(width: 45),
                           const Expanded(
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -148,7 +148,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                     contentPadding: EdgeInsets.only(bottom: 40, left: 10, top: 20),
                                     border: OutlineInputBorder(
                                       borderRadius: BorderRadius.all(Radius.circular(10)),
-                                    ),   // This line adds the box around the TextField
+                                    ),
                                   ),
                                 ),
                               ],
@@ -173,7 +173,7 @@ class _ProfilePageState extends State<ProfilePage> {
                               hintText: 'Masukkan NIK anda',
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.all(Radius.circular(10)),
-                              ),   // This line adds the box around the TextField
+                              ),
                             ),
                           ),
                         ],
@@ -207,7 +207,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                     ),
                                   ),
                                   onTap: () async {
-                                    FocusScope.of(context).requestFocus(new FocusNode());
+                                    FocusScope.of(context).requestFocus(FocusNode());
                                     DateTime? pickedDate = await showDatePicker(
                                       context: context,
                                       initialDate: DateTime.now(),
@@ -223,7 +223,7 @@ class _ProfilePageState extends State<ProfilePage> {
                               ],
                             ),
                           ),
-                          SizedBox(width: 20), // You can adjust the space between the two columns here
+                          const SizedBox(width: 20),
                           Expanded(
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -272,7 +272,7 @@ class _ProfilePageState extends State<ProfilePage> {
                               hintText: 'Masukkan Email anda',
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.all(Radius.circular(10)),
-                              ),   // This line adds the box around the TextField
+                              ),
                             ),
                           ),
                         ],
@@ -294,29 +294,33 @@ class _ProfilePageState extends State<ProfilePage> {
                               hintText: 'Masukkan Alamat Rumah anda',
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.all(Radius.circular(10)),
-                              ),   // This line adds the box around the TextField
+                              ),
                             ),
                           ),
                         ],
                       ),
-                      const SizedBox(height: 20),
+                      const SizedBox(height: 25),
                       SizedBox(
                         width: 200, // Lebar tombol
                         height: 45, // Tinggi tombol
                         child: ElevatedButton(
                           onPressed: () {
                           },
-                          child: Text('Simpan', style: TextStyle(color: Colors.white)),
+                          child: Text('Simpan', style: TextStyle(
+                            color: Colors.white, 
+                            fontWeight: FontWeight.bold
+                            )),
                           style: ButtonStyle(
                             backgroundColor: MaterialStateProperty.all<Color>(const Color(0xFF003366)),
                             shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                               RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(20),
+                                borderRadius: BorderRadius.circular(18),
                               ),
                             ),
                           ),
                         ),
-                      )
+                      ),
+                      const SizedBox(height: 70)
                     ],
                   )
                 )
