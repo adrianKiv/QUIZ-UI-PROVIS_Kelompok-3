@@ -74,8 +74,8 @@ class _HomeState extends State<Home> {
                         width: screenWidth * 0.6,
                         child: Column(
                           children: [
-                            Image.asset(
-                              "assets/images/fotojam.jpg",
+                            Image.network(
+                              "https://fastly.picsum.photos/id/357/600/200.jpg?hmac=qX5qCu2B_PqB5O7vcBGOIn11NuNCrPLp687CRDXd9Ok",
                               height: 50 - ukuran,
                               width: screenWidth * 1,
                               fit: BoxFit.cover,
@@ -103,8 +103,8 @@ class _HomeState extends State<Home> {
                       Container(
                           padding:
                               EdgeInsets.only(top: 50, left: screenWidth * 0.07),
-                          child: Image.asset(
-                            "assets/images/fotoorang.jpg",
+                          child: Image.network(
+                            "https://fastly.picsum.photos/id/669/200/200.jpg?hmac=lAa_bMRK0BRBCTEvl1acVqTfEDrXQc0yNwi683-13cE",
                             height: (screenHeight * 0.16) - ukuran,
                             width: screenWidth * 0.18,
                             fit: BoxFit.cover,
