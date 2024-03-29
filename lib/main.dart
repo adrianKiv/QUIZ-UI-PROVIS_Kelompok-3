@@ -47,10 +47,10 @@ class _MyHomePageState extends State<MyHomePage> {
               'Nomor Kelompok: 3',
             ),
             const Text(
-              'Mhs 1:  Adrian Mulianto',
+              'Mhs 1: 2200939_Adrian Mulianto',
             ),
             const Text(
-              'Mhs 2: Ilham Akbar',
+              'Mhs 2: 2201017_Ilham Akbar',
             ),
             Container(
               margin: const EdgeInsets.all(10),
