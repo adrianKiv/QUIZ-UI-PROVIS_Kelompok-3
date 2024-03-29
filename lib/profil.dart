@@ -19,6 +19,7 @@ class ProfilePage extends StatefulWidget {
 
 class _ProfilePageState extends State<ProfilePage> {
   String jenisKelamin = "Perempuan";
+  final TextEditingController _dateController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -197,6 +198,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                   ),
                                 ),
                                 TextField(
+                                  controller: _dateController, // Gunakan controller di sini
                                   textAlign: TextAlign.left,
                                   textInputAction: TextInputAction.next,
                                   decoration: const InputDecoration(
@@ -216,7 +218,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                     );
                                     if (pickedDate != null) {
                                       String formattedDate = DateFormat('dd/MM/yyyy').format(pickedDate);
-                                      (context as Element).markNeedsBuild();
+                                      _dateController.text = formattedDate; // Atur nilai controller di sini
                                     }
                                   },
                                 ),
