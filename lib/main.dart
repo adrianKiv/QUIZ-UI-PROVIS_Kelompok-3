@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kelompok3/profil.dart';
-
+import 'package:kelompok3/home.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -95,9 +95,10 @@ class _MyHomePageState extends State<MyHomePage> {
   //jaawaban no 2
   Widget soalNo2() {
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        ),
-        body: const Text("ini jawaban no 2"));
+        // appBar: AppBar(
+        //   backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        // ),
+        body: Home()
+    );
   }
 }
