@@ -1,4 +1,4 @@
-# kelompok3
+# kelompok 3
 
 A new Flutter project.
 
@@ -14,4 +14,4 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
-# 3_-2200939-Adrian-Mulianto-2201017-Iham-Akbar-
+# kelompok 3_2200939-Adrian-Mulianto-2201017-Iham-Akbar
