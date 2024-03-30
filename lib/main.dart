@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -86,13 +88,13 @@ class _MyHomePageState extends State<MyHomePage> {
         appBar: AppBar(
           backgroundColor: const Color(0xFF003366),
         ),
-        body: ProfilePage(),
+        body: const Profil(),
     );
   }
 
   //jaawaban no 2
   Widget soalNo2() {
-    return Scaffold(
+    return const Scaffold(
         // appBar: AppBar(
         //   backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         // ),
@@ -101,12 +103,14 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-class ProfilePage extends StatefulWidget {
+class Profil extends StatefulWidget {
+  const Profil({super.key});
+
   @override
-  _ProfilePageState createState() => _ProfilePageState();
+  State<Profil> createState() => _ProfileState();
 }
 
-class _ProfilePageState extends State<ProfilePage> {
+class _ProfileState extends State<Profil> {
   String jenisKelamin = "Perempuan";
   final TextEditingController _dateController = TextEditingController();
   @override
@@ -199,7 +203,6 @@ class _ProfilePageState extends State<ProfilePage> {
                                     child: ElevatedButton(
                                       onPressed: () {
                                       },
-                                      child: Text('Ubah', style: TextStyle(color: Colors.white)),
                                       style: ButtonStyle(
                                         backgroundColor: MaterialStateProperty.all<Color>(const Color(0xFF003366)),
                                         shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -210,6 +213,12 @@ class _ProfilePageState extends State<ProfilePage> {
                                             ),
                                           ),
                                         ),
+                                      ),
+                                      child: const Text(
+                                        'Ubah',
+                                        style: TextStyle(
+                                        color: Colors.white
+                                        )
                                       ),
                                     ),
                                   ),
@@ -306,8 +315,9 @@ class _ProfilePageState extends State<ProfilePage> {
                                       lastDate: DateTime(2100),
                                     );
                                     if (pickedDate != null) {
-                                      // String formattedDate = DateFormat('dd/MM/yyyy').format(pickedDate);
-                                      // _dateController.text = formattedDate; // Atur nilai controller di sini
+                                      // buka komentar import dan kode di bawah untuk menyimpan data calendar //
+                                      String formattedDate = DateFormat('dd/MM/yyyy').format(pickedDate);
+                                      _dateController.text = formattedDate;
                                     }
                                   },
                                 ),
@@ -397,10 +407,6 @@ class _ProfilePageState extends State<ProfilePage> {
                         child: ElevatedButton(
                           onPressed: () {
                           },
-                          child: Text('Simpan', style: TextStyle(
-                            color: Colors.white, 
-                            fontWeight: FontWeight.bold
-                            )),
                           style: ButtonStyle(
                             backgroundColor: MaterialStateProperty.all<Color>(const Color(0xFF003366)),
                             shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -408,6 +414,13 @@ class _ProfilePageState extends State<ProfilePage> {
                                 borderRadius: BorderRadius.circular(18),
                               ),
                             ),
+                          ),
+                          child: const Text(
+                            'Simpan',
+                              style: TextStyle(
+                              color: Colors.white, 
+                              fontWeight: FontWeight.bold
+                            )
                           ),
                         ),
                       ),

@@ -1,23 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-void main() => runApp(MyApp());
+class Profil extends StatefulWidget {
+  const Profil({super.key});
 
-class MyApp extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: ProfilePage(),
-    );
-  }
+  State<Profil> createState() => _ProfileState();
 }
 
-class ProfilePage extends StatefulWidget {
-  @override
-  _ProfilePageState createState() => _ProfilePageState();
-}
-
-class _ProfilePageState extends State<ProfilePage> {
+class _ProfileState extends State<Profil> {
   String jenisKelamin = "Perempuan";
   final TextEditingController _dateController = TextEditingController();
   @override
@@ -110,7 +101,6 @@ class _ProfilePageState extends State<ProfilePage> {
                                     child: ElevatedButton(
                                       onPressed: () {
                                       },
-                                      child: Text('Ubah', style: TextStyle(color: Colors.white)),
                                       style: ButtonStyle(
                                         backgroundColor: MaterialStateProperty.all<Color>(const Color(0xFF003366)),
                                         shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -121,6 +111,12 @@ class _ProfilePageState extends State<ProfilePage> {
                                             ),
                                           ),
                                         ),
+                                      ),
+                                      child: const Text(
+                                        'Ubah',
+                                        style: TextStyle(
+                                        color: Colors.white
+                                        )
                                       ),
                                     ),
                                   ),
@@ -308,10 +304,6 @@ class _ProfilePageState extends State<ProfilePage> {
                         child: ElevatedButton(
                           onPressed: () {
                           },
-                          child: Text('Simpan', style: TextStyle(
-                            color: Colors.white, 
-                            fontWeight: FontWeight.bold
-                            )),
                           style: ButtonStyle(
                             backgroundColor: MaterialStateProperty.all<Color>(const Color(0xFF003366)),
                             shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -319,6 +311,13 @@ class _ProfilePageState extends State<ProfilePage> {
                                 borderRadius: BorderRadius.circular(18),
                               ),
                             ),
+                          ),
+                          child: const Text(
+                            'Simpan', 
+                            style: TextStyle(
+                            color: Colors.white, 
+                            fontWeight: FontWeight.bold
+                            )
                           ),
                         ),
                       ),
